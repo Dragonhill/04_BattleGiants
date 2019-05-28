@@ -20,5 +20,7 @@ public:
 	virtual void BeginPlay() override;
 	// Sets default values for this pawn's properties
 	ATank* GetControlledTank() const;
+
+	ATank* GetPlayerTank() const;
 	
 };
