@@ -18,6 +18,8 @@ class BATTLEBEAST_API ATankPlayerController : public APlayerController
 public:
 
 	virtual void BeginPlay() override;
+
+	virtual void Tick(float deltaTime) override;
 	// Sets default values for this pawn's properties
 	ATank* GetControlledTank() const;
 

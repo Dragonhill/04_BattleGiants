@@ -7,7 +7,6 @@
 #include "BattleBeast.h"
 
 
-
 void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
@@ -29,6 +28,22 @@ void ATankAIController::BeginPlay()
 	
 }
 
+// Tick
+	//Super
+	//AimTowardscrosshair
+
+
+void ATankAIController::Tick( float deltaTime)
+{
+	Super::Tick(deltaTime);
+
+	AimTowardsCrosshair();
+}
+
+void ATankAIController::AimTowardsCrosshair()
+{
+	if (!GetControlledTank()) { return; }
+}
 
 ATank* ATankAIController::GetControlledTank() const
 {

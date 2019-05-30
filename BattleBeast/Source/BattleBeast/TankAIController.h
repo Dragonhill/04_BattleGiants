@@ -18,6 +18,10 @@ class BATTLEBEAST_API ATankAIController : public AAIController
 public:
 	
 	virtual void BeginPlay() override;
+
+	virtual void Tick( float deltaTime) override;
+
+	void AimTowardsCrosshair();
 	// Sets default values for this pawn's properties
 	ATank* GetControlledTank() const;
 
