@@ -20,6 +20,12 @@ public:
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float deltaTime) override;
+
+	void AimTowardsCrosshair();
+
+	bool GetSightRayHitLocation(FVector& HitLocation) const;
+
+
 	// Sets default values for this pawn's properties
 	ATank* GetControlledTank() const;
 
