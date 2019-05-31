@@ -15,7 +15,7 @@ class BATTLEBEAST_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
-public:
+private:
 
 	virtual void BeginPlay() override;
 
@@ -29,6 +29,10 @@ public:
 	// Sets default values for this pawn's properties
 	ATank* GetControlledTank() const;
 
-	
+	UPROPERTY(EditAnywhere)
+		float CrosshairXLocation = 0.5;
+
+	UPROPERTY(EditAnywhere)
+		float CrosshairYLocation = 0.3333;
 	
 };

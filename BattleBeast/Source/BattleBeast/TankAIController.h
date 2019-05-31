@@ -26,5 +26,11 @@ public:
 	ATank* GetControlledTank() const;
 
 	ATank* GetPlayerTank() const;
+
+	UPROPERTY(EditAnywhere)
+		float CrosshairXLocation = 0.5;
+
+	UPROPERTY(EditAnywhere)
+		float CrosshairYLocation = 0.3333;
 	
 };
