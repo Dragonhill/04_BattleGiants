@@ -22,6 +22,7 @@ public:
 	virtual void Tick( float deltaTime) override;
 
 	void AimTowardsCrosshair();
+
 	// Sets default values for this pawn's properties
 	ATank* GetControlledTank() const;
 

@@ -37,7 +37,15 @@ void ATankAIController::Tick( float deltaTime)
 {
 	Super::Tick(deltaTime);
 
-	AimTowardsCrosshair();
+	if (GetPlayerTank())
+	{
+		// TODO Move towards the player
+
+		// Aim towards the player
+		GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
+
+		// Fire if ready
+	}
 }
 
 void ATankAIController::AimTowardsCrosshair()
