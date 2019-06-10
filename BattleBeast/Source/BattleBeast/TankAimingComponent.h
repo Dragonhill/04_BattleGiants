@@ -2,10 +2,12 @@
 
 #pragma once
 
+//#include "TankBarrel.h"
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "TankAimingComponent.generated.h"
 
+class UTankBarrel;	//Forward Declaration instead of using #include
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BATTLEBEAST_API UTankAimingComponent : public UActorComponent
@@ -17,13 +19,13 @@ public:
 	// Sets default values for this component's properties
 	UTankAimingComponent();
 
-	void SetBarrelRefernce(UStaticMeshComponent *BarrelToset);
+	void SetBarrelRefernce(UTankBarrel *BarrelToset);
 
 	void AimAt(FVector HitLocation, float LaunchSpeed);
 
 		
 private:
-	UStaticMeshComponent* Barrel = nullptr;
+	UTankBarrel* Barrel = nullptr;
 
 	void MoveBarrelTowards(FVector AimDirection);
 };
