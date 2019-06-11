@@ -9,13 +9,13 @@
 /**
  * 
  */
-UCLASS(meta = (BlueprintSpawnableComponent), hidecatagories = ("Collision"))
+UCLASS(meta = (BlueprintSpawnableComponent), hidecategories = ("Collision"))
 class BATTLEBEAST_API UTankBarrel : public UStaticMeshComponent
 {
 	GENERATED_BODY()
 
 public:
-	void Elevate(float DegreesPersecond);
+	void Elevate(float RelativeSpeed);
 
 private:
 	UPROPERTY(EditAnywhere, Category = Setup)
