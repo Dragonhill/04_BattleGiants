@@ -6,6 +6,8 @@
 #include "GameFramework/PlayerController.h"
 #include "BattleBeast.h"
 
+// Forward Declarations
+class ATank;
 
 void ATankAIController::BeginPlay()
 {
