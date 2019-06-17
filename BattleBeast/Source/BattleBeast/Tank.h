@@ -18,13 +18,16 @@ class BATTLEBEAST_API ATank : public APawn
 
 public:
 
-	void AimAt(FVector HitLoaction);
-
 	UFUNCTION(Blueprintcallable, Category = Setup)
 	void SetBarrelRefernce(UTankBarrel *BarrelToSet);
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetTurretReference(UTankTurret* TurretToSet);
+
+	void AimAt(FVector HitLocation);
+
+	UFUNCTION(BlueprintCallable, Category = Firing)
+		void Fire();
 
 protected:
 	UTankAimingComponent  *TankAimingComponent = nullptr;
