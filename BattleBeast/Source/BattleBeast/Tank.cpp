@@ -57,7 +57,7 @@ void ATank::Fire()
 	auto Time = GetWorld()->GetTimeSeconds();
 	UE_LOG(LogTemp, Warning, TEXT("%f: Tank fires"), Time);
 
-
+	// TODO - this is failing!!!!!!
 	if (!Barrel) { return; }
 
 	// Spawn a projectile at the socket location on the barrel
