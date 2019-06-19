@@ -14,6 +14,10 @@ void ATank::SetBarrelRefernce(UTankBarrel * BarrelToset)
 {
 	TankAimingComponent->SetBarrelRefernce(BarrelToset);
 	Barrel = BarrelToset;
+	UE_LOG(LogTemp, Warning, TEXT("Barrel Set!!!!"));
+	if (!Barrel) {
+		UE_LOG(LogTemp, Warning, TEXT("Barrel is not valid!!!!"));
+	}
 }
 
 void ATank::SetTurretReference(UTankTurret* TurretToSet)
@@ -58,7 +62,11 @@ void ATank::Fire()
 	UE_LOG(LogTemp, Warning, TEXT("%f: Tank fires"), Time);
 
 	// TODO - this is failing!!!!!!
-	if (!Barrel) { return; }
+	if (!Barrel) 
+	{ 
+		UE_LOG(LogTemp, Warning, TEXT("Boom Failed!!!!"));
+		return; 
+	}
 
 	// Spawn a projectile at the socket location on the barrel
 	GetWorld()->SpawnActor<AProjectile>(
@@ -66,5 +74,6 @@ void ATank::Fire()
 		Barrel->GetSocketLocation(FName("Projectile")),
 		Barrel->GetSocketRotation(FName("Projectile"))
 		);
+	UE_LOG(LogTemp, Warning, TEXT("Boom!!!!"));
 }
 
